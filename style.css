@@ -1,0 +1,330 @@
+@font-face {
+    font-family: fbL;
+    src: url(Freight\ Big\ Pro\ Light.otf);
+}
+@font-face {
+    font-family: fbR;
+    src: url(Freight\ Big\ Pro\ Medium.otf);
+}
+@font-face {
+    font-family: gilL;
+    src: url(Gilroy-Light.otf);
+}
+@font-face {
+    font-family: gilM;
+    src: url(Gilroy-Medium.e7e7c091.ttf);
+}
+@font-face {
+    font-family: gilSB;
+    src: url(Gilroy-SemiBold.f3ed44cd.ttf);
+}
+@font-face {
+    font-family: fbilL;
+    src: url(Freight\ Big\ Pro\ Light\ Italic.otf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+/* Loader */
+#loader{
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+    position: fixed;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+}
+#loader  h1{
+    font-size: 7vw;
+    line-height: 6vw;   
+    font-family: fbL;
+    font-weight: 100;
+    position: relative;
+    z-index: 11;
+    letter-spacing: -2px;
+    font-feature-settings: "lnum", "liga", "kern";
+
+}
+#loader video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 9;
+}
+#yellowDiv{
+    height: 100%;
+    width: 100%;
+    background-color: #F5E41B;
+    position: absolute;
+    z-index: 10;
+
+}
+#yellowDiv2{
+    height: 100%;
+    width: 100%;
+    background-color: #F5E41B;
+    position: absolute;
+    z-index:  8;
+
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #F5E41B;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page1 h1{
+    font-size: 7vw;
+    line-height: 6vw;   
+    font-family: fbL;
+    font-weight: 100;
+    letter-spacing: -2px;
+    font-feature-settings: "lnum", "liga", "kern";
+}
+#nav{
+    height: 13vh;
+    width: 100vw;
+    position: absolute;
+    top:0;
+    padding : 3.5vw 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav #sideNav{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    justify-content: space-around;
+    font-size: 1.5vw;
+    font-family: gilL;
+    gap:5vw;
+    position: relative;
+}
+#nav #sideNav h5{
+    position: relative;
+
+}
+.line2 {
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: black;
+    transition: all ease .4s;
+}
+h5:hover .line2{
+   width: 100%;
+
+}
+#page2 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: fbL;
+    font-weight: 100;
+}
+#page2 .elem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    width: 100%;
+    cursor: pointer;
+}
+#page2 .blur {
+    position: absolute;
+    width: 40%;
+    background: linear-gradient(to right,#f5e31bf5, #F5E41B,#f5e31bfc);
+    box-shadow:  20px 0px 2px 0px #f5e31bfc , -20px 0px 2px 0px #F5E41B ;
+    height: 100%;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    z-index: 8;
+}
+#page2 .elem .moving{
+    position: absolute;
+    background-color: #F5E41B; 
+    width: 100%;
+    padding: .3vw 0vw;
+    z-index: -1;
+    display: flex;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: all ease .4s;
+    /* mix-blend-mode: difference; */
+}
+#page2 .elem .moving .movingIn{
+    display: flex;
+    color: #000;
+    gap:10vw;
+    font-size: 1.5vw;
+    align-items: center;
+    justify-content: center;
+    font-family: gilL;
+    animation-name: movingIn;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    white-space: nowrap;
+}
+
+#page2 .elem>h2{
+    font-size: 6vw;
+    font-weight: 100;
+    text-align: center;
+    padding: 0vw 2vw;
+    color: #fff;
+}
+@keyframes movingIn {
+    from{
+        transform: translateX(0);
+        
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#page2 .elem:hover .moving{
+    opacity: 1;
+    transform: scaleY(1);
+}
+#page2 .elem:hover h2{
+    font-family: fbilL;
+    font-weight: 100;
+    transition: all ease .3s;
+}
+#page3{
+    position: relative;
+    padding-top: 2vw;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; 
+}
+#page3 .verticalSection{
+    min-height: 100vh;
+    position: relative;
+    width: 33vw;
+}
+#page3 .textDiv{
+    position: relative;
+    height: 90%;
+    width: 90%;
+    padding: 2vw 1vw;
+    margin-bottom: 1vw;
+    overflow: hidden;
+
+}
+
+.verticalSection img{
+    width: 120%;
+    /* height: 110%; */
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+
+}
+.overlay {
+    width: 97%;
+    height:97%;
+    position: absolute;
+    background-color:#000;
+    opacity: 0;
+    top:0%;
+    z-index: 9;
+    margin-bottom: 1vw;
+    border-radius: 20px;
+    color: #fff;
+    font-family: fbL;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#page3 .overlay:hover {
+    opacity: .8;
+    transition: all ease-in-out .4s;
+}
+#footT{
+    height: 20vh;
+    width: 100vw;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: gilM;
+    gap:2vw;
+    flex-direction: column-reverse;
+    padding: 3vw 0;
+}
+#footT h4{
+    cursor: pointer;
+}
+#footT i{
+    font-size:7vh;
+    cursor: pointer;
+}
+#footer {
+    background: #000;
+    height: 20vh;
+    width: 100vw;
+    color: #fff;
+    font-family: gilL;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+    font-size: larger;
+    position: relative;
+}
+.social{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+#footer h5{
+    position: relative;
+    padding: .4vw 0;
+    /* background-color: red; */
+}
+.line{
+    width: 0%;
+    height: 2px;
+    background-color: rgb(248, 243, 244);
+    position: absolute;
+    bottom: -5%;
+    transition: all ease .6s;
+
+}
+ h5:hover .line{
+    width: 100%;
+}
